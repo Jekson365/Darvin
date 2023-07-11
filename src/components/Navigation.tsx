@@ -5,7 +5,7 @@ import NavMobile from "./navbars/NavMobile"
 const Navigation = () => {
     const [innerWidth, setInnerWidth] = useState<number>(window.innerWidth)
     useEffect(() => {
-        window.addEventListener("resize",()=> setInnerWidth(window.innerWidth))
+        window.addEventListener("resize", () => setInnerWidth(window.innerWidth))
     })
     return (
         <>
