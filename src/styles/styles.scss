@@ -1,0 +1,29 @@
+@import url("//cdn.web-fonts.ge/fonts/bpg-arial/css/bpg-arial.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+    font-family: "BPG Arial", sans-serif !important;
+
+
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #ededed;
+}
+
+.dasdaca {
+    transition: 0.3s ease-out;
+}
+
+.de-active {
+    top: "-200px";
+    transition: 0.5s ease-out;
+}
+
+.active-nav {
+    transition: 0.5s ease-out;
+    top: "60px";
+}
