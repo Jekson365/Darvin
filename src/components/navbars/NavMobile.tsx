@@ -10,7 +10,7 @@ const NavMobile = () => {
         <>
             <Container
                 maxWidth={false}
-                sx={{ padding: "0px !important", position: "relative" }}
+                sx={{ padding: "0px !important" }}
             >
                 <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}
                     sx={{ background: "#ededed" }}
@@ -30,11 +30,19 @@ const NavMobile = () => {
                 <Box
                     className='dasdaca'
                     zIndex={100}
-                    sx={{ position: "absolute", right: "0px", top: nav ? '80px' : "-340px", width: "100%", background: "white", padding: "20px" }}
+                    sx={{
+                        position: "absolute",
+                        right: "0px",
+                        top: nav ? '80px' : "-340px",
+                        width: "100%",
+                        background: "white",
+                        padding: "20px 0px",
+                    }}
                 >
                     <Stack
                         direction={'column'}
                         alignItems={'flex-start'}
+                        pl={3}
                     >
                         <Stack
                             gap={"40px"}

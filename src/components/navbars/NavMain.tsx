@@ -1,6 +1,8 @@
 import { Box, Container, Stack, Typography } from '@mui/material'
 import LOGO from '../../Logo.png'
 import { NavLink } from 'react-router-dom'
+import IconReg from '../../icons/reg.svg'
+import IconAut from '../../icons/auth.svg'
 
 const NavMain = () => {
     return (
@@ -12,11 +14,19 @@ const NavMain = () => {
                     position: "fixed",
                     top: "0",
                     background: "white",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    flexDirection: "column",
+                    alignItems: "flex-start"
                 }}
             >
                 <Box
                     pl={2.5}
                     pt={5.6}
+                    display={'flex'}
+                    justifyContent={'space-between'}
+                    flexDirection={'column'}
+                    alignItems={'flex-start'}
                 >
                     <Stack
                         direction={'column'}
@@ -37,6 +47,18 @@ const NavMain = () => {
                             <NavItemText location={'sylabus'} title="სილაბუსი" icon={"https://assets.website-files.com/5ec03c2c67cf4824e3d00674/5ec16f2bf2396c56c2e0b35d_Discovery.svg"} />
                             <NavItemText location={'blog'} title="ბლოგი" icon={"https://assets.website-files.com/5ec03c2c67cf4824e3d00674/5ec16f2bf2396c56c2e0b35d_Discovery.svg"} />
                         </Stack>
+                    </Stack>
+                </Box>
+                <Box
+                    mb={3}
+                >
+                    <Stack
+                        direction={'column'}
+                        gap={'20px'}
+                        alignItems={'center'}
+                    >
+                        <NavItemText location={'reg'} title={'რეგისტრაცია'} icon={IconReg}></NavItemText>
+                        <NavItemText location={'login'} title={'ავტორიზაცია'} icon={IconAut}></NavItemText>
                     </Stack>
                 </Box>
             </Container>

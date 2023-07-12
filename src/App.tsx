@@ -8,6 +8,9 @@ import Sylabus from './pages/sylabus/Sylabus';
 import Blog from './pages/blog/Blog';
 import { Box, Container } from '@mui/material';
 import Search from './components/Search';
+import Registration from './pages/auth/Registration';
+import Login from './pages/auth/Login';
+
 
 function App() {
   return (
@@ -19,13 +22,15 @@ function App() {
           maxWidth={false}
         >
           <Search />
-          <Box mt={5}> 
+          <Box mt={5}>
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/lessons' element={<Lessons />} />
               <Route path='/lectors' element={<Lectors />} />
               <Route path='/sylabus' element={<Sylabus />} />
               <Route path='/blog' element={<Blog />} />
+              <Route path='/reg' element={<Registration />} />
+              <Route path='/login' element={<Login />} />
             </Routes>
           </Box>
         </Container>
