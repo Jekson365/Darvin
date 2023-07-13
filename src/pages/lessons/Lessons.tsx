@@ -1,4 +1,4 @@
-import { Grid, Grow, Paper } from "@mui/material";
+import { CardActionArea, Grid, Grow, Paper } from "@mui/material";
 import LessonsComponent from "./LessonsComponent";
 import { Lecture, Lecutres } from "./lessons.base/LessonsBase";
 
@@ -10,9 +10,11 @@ const Lessons = () => {
           return (
             <>
               <Grid xs={12} item>
-                <Grow in={true}>
+                <Grow in={true} timeout={1000}>
                   <Paper>
-                    <LessonsComponent item={each} />
+                    <CardActionArea>
+                      <LessonsComponent item={each} />
+                    </CardActionArea>
                   </Paper>
                 </Grow>
               </Grid>

@@ -1,6 +1,8 @@
 import { Box, CardMedia, Container, Grid, Stack, Typography, Rating } from "@mui/material"
 import { Lects, Lecturer } from "./lectros.base/Lecturer"
 import { ButtonDetailed, MainColor } from "../../styles/Styles"
+import { Link } from "react-router-dom"
+
 
 const Lectors = () => {
   return (
@@ -30,10 +32,22 @@ const Lectors = () => {
                       gap={'10px'}
                       alignItems={'flex-start'}
                     >
-                      <Box
-                        fontSize={'16px'}
-                        sx={{ color: MainColor, fontWeight: "bold" }}
-                      >{subject}</Box>
+                      <Stack direction={'row'} flexWrap={'wrap'} gap={'5px'}>
+                        {subject.slice(0, 2).map((e: String) => {
+                          return (
+                            <>
+                              <Box
+                                fontSize={'12px'}
+                                p={0.5}
+                                pl={1}
+                                pr={1}
+                                borderRadius={10}
+                                sx={{ color: 'white', background: MainColor }}
+                              >{e}</Box>
+                            </>
+                          )
+                        })}
+                      </Stack>
                       <Rating
                         sx={{
                           "& .MuiRating-iconFilled": {
@@ -50,7 +64,10 @@ const Lectors = () => {
                       <Typography
                         color={'gray'}
                       >{desc}</Typography>
-                      <ButtonDetailed>მეტი...</ButtonDetailed>
+
+                      <Link to={`/lect/${each.id}`}>
+                        <ButtonDetailed>მეტი...</ButtonDetailed>
+                      </Link>
                     </Stack>
                   </Box>
                 </Grid>
@@ -62,5 +79,7 @@ const Lectors = () => {
     </>
   )
 }
+
+
 
 export default Lectors

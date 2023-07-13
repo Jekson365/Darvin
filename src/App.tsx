@@ -10,12 +10,19 @@ import { Box, Container } from "@mui/material";
 import Search from "./components/Search";
 import Registration from "./pages/auth/Registration";
 import Login from "./pages/auth/Login";
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
+import LectPage from "./pages/lect_Page/LectPage";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export const NavContext = createContext({});
 
 function App() {
   const [nav, setNav] = useState<boolean>(false);
+
+  useEffect(() => {
+    AOS.init()
+  }, [])
   return (
     <>
       <BrowserRouter>
@@ -39,6 +46,7 @@ function App() {
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/reg" element={<Registration />} />
                 <Route path="/login" element={<Login />} />
+                <Route path='/lect/:id' element={<LectPage />} />
               </Routes>
             </Box>
           </Container>

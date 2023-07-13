@@ -74,15 +74,6 @@ const LessonsComponent = ({ item }: { item: Lecture }) => {
                   padding: "0 10px",
                   fontSize: "13px",
                   borderRadius: "20px",
-                }}
-              >
-                დაჯავშნა
-              </ChooseButton>
-              <ChooseButton
-                sx={{
-                  padding: "0 10px",
-                  fontSize: "13px",
-                  borderRadius: "20px",
                   background: "white",
                   color: MainColor,
                   "&:hover": {
