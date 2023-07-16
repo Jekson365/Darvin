@@ -10,6 +10,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import Twitter from "@mui/icons-material/Twitter"
 import Slider from "./story/Slider"
 import Titles from "./Titles"
+import Classes from "./Classes"
 
 
 const LectPage = () => {
@@ -97,13 +98,22 @@ const LectPage = () => {
                     </Box>
                 </Grid>
             </Grid >
+            {/* ველის დასახელება */}
             <Titles data={data} />
             <Typography
                 variant="h5"
                 mb={3}
                 mt={3}
                 color={MainColor}
+            >ხელმისაწვდომი ლექციები</Typography>
+            <Classes room={data} />
+            <Typography
+                variant="h5"
+                mb={3}
+                mt={3}
+                color={MainColor}
             >გალერეა</Typography>
+            {/* ველის დასახელება */}
             <Slider />
         </>
     )

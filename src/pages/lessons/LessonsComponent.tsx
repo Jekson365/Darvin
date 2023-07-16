@@ -1,9 +1,15 @@
 import { Box, CardMedia, Grid, Rating, Stack, Typography } from "@mui/material";
-import { Lecture } from "./lessons.base/LessonsBase";
 import { MainColor, MainColorGreen } from "../../styles/Styles";
 import { ChooseButton } from "../auth/Registration";
+import { Lecturer } from "../lectors/lectros.base/Lecturer";
+import { Lecture } from "./lessons.base/LessonsBase";
+import { useEffect, useState } from "react";
 
-const LessonsComponent = ({ item }: { item: Lecture }) => {
+const LessonsComponent = ({ item }: { item: Lecture[] }) => {
+  useEffect(() => {
+    console.log(item)
+  }, [])
+
   return (
     <>
       <Grid
@@ -11,11 +17,11 @@ const LessonsComponent = ({ item }: { item: Lecture }) => {
         sx={{ background: "white", display: "flex", alignItems: "center" }}
       >
         <Grid item xs={12} md={4}>
-          <Box maxWidth={445} height={280} width={"100%"}>
+          <Box width={"100%"}>
             <CardMedia
               component={"img"}
               sx={{ width: "100%", height: "100%", objectFit: "cover" }}
-              src={item.img.toString()}
+              src={item[0].img.toString()}
             />
           </Box>
         </Grid>
@@ -30,7 +36,7 @@ const LessonsComponent = ({ item }: { item: Lecture }) => {
           >
             <Stack direction={"column"} gap={0.5}>
               <Typography variant="h5" color={MainColor}>
-                {item.title} -{" "}
+                {item[0].title} -{" "}
                 <Rating
                   size="small"
                   sx={{
@@ -40,11 +46,11 @@ const LessonsComponent = ({ item }: { item: Lecture }) => {
                   }}
                   color={MainColor}
                   readOnly
-                  defaultValue={item.stars}
+                  defaultValue={item[0].stars}
                 />
               </Typography>
               <Typography fontSize={"14px"} color={"gray"}>
-                ლექტორი: {item.author}
+                ლექტორი: {item[0].author}
               </Typography>
               <Box
                 p={0.1}
@@ -61,12 +67,12 @@ const LessonsComponent = ({ item }: { item: Lecture }) => {
                   color={"white"}
                   fontWeight={"bold"}
                 >
-                  {item.price}ლ
+                  {item[0].price}ლ
                 </Typography>
               </Box>
             </Stack>
             <Typography fontSize={"14px"} color={"gray"}>
-              {item.description}
+              {item[0].description}
             </Typography>
             <Stack direction={"row"} gap={"10px"}>
               <ChooseButton

@@ -1,22 +1,20 @@
 import { CardActionArea, Grid, Grow, Paper } from "@mui/material";
 import LessonsComponent from "./LessonsComponent";
-import { Lecture, Lecutres } from "./lessons.base/LessonsBase";
+import { Lects, Lecturer } from "../lectors/lectros.base/Lecturer";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Lessons = () => {
   return (
     <>
       <Grid container columns={12} rowSpacing={2}>
-        {Lecutres.map((each: Lecture) => {
+        {Lects.filter((each: any) => { return each.rooms != false }).map((each: Lecturer) => {
           return (
             <>
               <Grid xs={12} item>
-                <Grow in={true} timeout={1000}>
-                  <Paper>
-                    <CardActionArea>
-                      <LessonsComponent item={each} />
-                    </CardActionArea>
-                  </Paper>
-                </Grow>
+                <Link to={`/lect/${each.id}`}>
+                  <LessonsComponent item={each.rooms} />
+                </Link>
               </Grid>
             </>
           );
