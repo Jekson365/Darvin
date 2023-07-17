@@ -44,12 +44,14 @@ const LesPage = () => {
                     <Typography
                         variant="h4"
                         color={'white'}
-                    >{final && final.title} - <Rating value={final && final.stars} readOnly sx={{
-                        "& .MuiRating-iconFilled": {
-                            color: 'white',
-                        },
+                    >{final && final.title} -
+                        <Rating value={Math.floor(Math.random() * 5)} readOnly
+                            sx={{
+                                "& .MuiRating-iconFilled": {
+                                    color: 'white',
+                                },
 
-                    }} /></Typography>
+                            }} /></Typography>
                     <Typography
                         color={'white'}
                     >{final && final.description}</Typography>
@@ -74,11 +76,11 @@ const LesPage = () => {
                         display: { xs: "none", md: "block" },
                         position: { xs: "static", md: "absolute" },
                         right: { xs: "50%", md: "100px" },
-                        bottom: "-218px",
+                        top: "65px",
                         borderRadius: "30px",
                         maxWidth: { xs: "200px", md: "300px" },
                         width: "100%",
-                        height: { xs: "250px", md: "452px" },
+                        height: { xs: "250px", md: "fit-content" },
                         background: MainColor,
                     }}
                 >
@@ -120,8 +122,8 @@ const LesPage = () => {
                                 </Typography>
                             </Typography>
                         </Stack>
-                        <ButtonDetailed sx={{ width: "100%", background: "white", color: MainColor, padding: "10px 0", borderRadius: "5px", marginTop: "8px", "&:hover": { color: "white", outline: "1px solid white" } }}>დაჯავშნა</ButtonDetailed>
-                        <ButtonDetailed sx={{ width: "100%", background: "white", color: MainColor, padding: "10px 0", borderRadius: "5px", marginTop: "8px", "&:hover": { color: "white", outline: "1px solid white" } }}>კალათაში დამატება</ButtonDetailed>
+                        <ButtonDetailed sx={{ width: "100%", background: "white", color: MainColor, padding: "10px 0", borderRadius: "10px", marginTop: "8px", "&:hover": { color: "white", outline: "1px solid white" } }}>დაჯავშნა</ButtonDetailed>
+                        <ButtonDetailed sx={{ width: "100%", background: "white", color: MainColor, padding: "10px 0", borderRadius: "10px", marginTop: "8px", "&:hover": { color: "white", outline: "1px solid white" } }}>კალათაში დამატება</ButtonDetailed>
                     </Stack>
                 </Box>
             </Box>
@@ -186,8 +188,8 @@ const LesPage = () => {
                     </Grid>
                 </Grid>
             </Box>
-            <Benefits />
-            <Sylabus />
+            <Benefits benefits={final} />
+            <Sylabus SylByWeek={final} />
         </>
     )
 }

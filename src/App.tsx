@@ -19,7 +19,9 @@ import LesPage from "./pages/lessons_page/LesPage";
 export const NavContext = createContext({});
 
 function App() {
+
   const [nav, setNav] = useState<boolean>(false);
+  const [searchRes, setSearchRes] = useState<String>("")
 
   useEffect(() => {
     AOS.init()
@@ -27,7 +29,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <NavContext.Provider value={{ nav, setNav }}>
+        <NavContext.Provider value={{ nav, setNav, searchRes, setSearchRes }}>
           <Navigation />
           <Container
             sx={{
@@ -48,7 +50,7 @@ function App() {
                 <Route path="/reg" element={<Registration />} />
                 <Route path="/login" element={<Login />} />
                 <Route path='/lect/:id' element={<LectPage />} />
-                <Route path='/less/:id' element={<LesPage/>}/>
+                <Route path='/less/:id' element={<LesPage />} />
               </Routes>
             </Box>
           </Container>

@@ -5,9 +5,13 @@ import Sec2 from '../../illustrations/Girl-Workplace.svg'
 import Sec3 from '../../illustrations/Pomodoro-technique.svg'
 import { ButtonDetailed } from "../../styles/Styles"
 import { Link } from "react-router-dom"
+import { useEffect } from "react"
 
 
 const Home = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     const benefits = [
         {
             img: Sec1,
@@ -33,7 +37,9 @@ const Home = () => {
                 {benefits.map((each, index) => {
                     return (
                         <>
+
                             <Grid container item columns={12}
+                                data-aos='fade-right'
                                 height={'100%'}
                                 minHeight={'70vh'}
                                 display={'flex'}

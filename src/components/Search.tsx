@@ -1,28 +1,20 @@
-import { Box, InputBase, Stack, styled } from "@mui/material"
-import SearchIcon from '@mui/icons-material/Search';
-import ClearIcon from '@mui/icons-material/Clear';
-import { useState } from "react";
+import { Box, Grid, InputBase, styled } from "@mui/material"
+import { ButtonDetailed, MainColor } from "../styles/Styles";
+import { useContext, useEffect } from "react";
+import { NavContext } from "../App";
 
 const Search = () => {
-    const [sth, setSearch] = useState<boolean>(false)
+    const { setSearchRes, searchRes } = useContext<any>(NavContext)
     return (
         <>
             <Box
                 width={'100%'}
+                bgcolor={MainColor}
+                height={'40px'}
+                borderRadius={'5px'}
             >
-            <Stack
-                direction={'row'}
-                alignItems={'center'}
-                position={'relative'}
-            >
-                <SearchBar placeholder="ძებნა..." sx={{ width: `${!sth ? '95%' : "0%"}`, opacity: `${!sth ? '1' : "0"}` }} />
-                <Box
-                    sx={{ cursor: "pointer", position: "absolute", right: "0" }}
-                    onClick={() => setSearch(!sth)}>
-                    {sth ? <SearchIcon sx={{ fontSize: "40px" }} /> : <ClearIcon sx={{ fontSize: "40px" }} />}
-                </Box>
-            </Stack>
-        </Box >
+                <SearchBar placeholder="ძებნა..." onChange={(e: any) => setSearchRes(e.target.value)} />
+            </Box >
         </>
     )
 }
@@ -30,7 +22,10 @@ const Search = () => {
 export const SearchBar = styled(InputBase)({
     background: "white",
     padding: "5px 10px",
+    width: "100%",
     transition: "1s",
+    height: "40px",
+    borderRadius: "5px",
 })
 
 export default Search

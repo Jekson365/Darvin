@@ -1,32 +1,34 @@
 import { Box, Stack, Typography } from "@mui/material"
 import CheckIcon from '@mui/icons-material/Check';
 import { MainColor } from "../../styles/Styles";
+import { useEffect } from "react";
 
 
-const Benefits = () => {
-    const learningPlane = [
-        "ხატვა-წერას",
-        "მეგას პროგრამას",
-        "პროგრამირებას",
-        "სალარო აპარატების დაყენეას",
-    ]
+const Benefits = ({ benefits }: { benefits: any }) => {
+    useEffect(() => {
+        console.log(benefits)
+    }, [])
     return (
         <>
             <>
-                <Box 
+                <Box
                     data-aos='fade-down'
                     data-aos-duration='1000'
-                sx={{
-                    border: "1px solid rgba(0,0,0,0.1)",
-                    maxWidth: { xs: "100%", md: "45%" },
-                    boxShadow: "0 0 5px 0.1px rgba(0,0,0,0.1)"
-                }} mt={5} p={3}>
+                    sx={{
+                        border: "1px solid rgba(0,0,0,0.1)",
+                        maxWidth: { xs: "100%", md: "45%" },
+                        boxShadow: "0 0 5px 0.1px rgba(0,0,0,0.1)"
+                    }} mt={5} p={3}>
                     <Stack
                         direction={'column'}
                         gap={'15px'}
                         alignItems={'flex-start'}
                     >
-                        {learningPlane.map((e) => {
+                        <Typography
+                            variant="h6"
+                            color={'gray'}
+                        >შენ შეისწავლი:</Typography>
+                        {benefits && benefits.learningPlan.map((e : String) => {
                             return (
                                 <>
                                     <Typography color={'gray'}>
