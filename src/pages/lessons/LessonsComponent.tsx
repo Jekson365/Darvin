@@ -1,9 +1,9 @@
 import { Box, CardMedia, Grid, Rating, Stack, Typography } from "@mui/material";
-import { MainColor, MainColorGreen } from "../../styles/Styles";
+import { MainColor } from "../../styles/Styles";
 import { ChooseButton } from "../auth/Registration";
-import { Lecturer } from "../lectors/lectros.base/Lecturer";
 import { Lecture } from "./lessons.base/LessonsBase";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const LessonsComponent = ({ item }: { item: Lecture[] }) => {
   useEffect(() => {
@@ -56,7 +56,7 @@ const LessonsComponent = ({ item }: { item: Lecture[] }) => {
                 p={0.1}
                 pl={1}
                 pr={1}
-                bgcolor={MainColorGreen}
+                bgcolor={MainColor}
                 maxWidth={"30px"}
                 textAlign={"center"}
                 display={"flex"}
@@ -75,21 +75,23 @@ const LessonsComponent = ({ item }: { item: Lecture[] }) => {
               {item[0].description}
             </Typography>
             <Stack direction={"row"} gap={"10px"}>
-              <ChooseButton
-                sx={{
-                  padding: "0 10px",
-                  fontSize: "13px",
-                  borderRadius: "20px",
-                  background: "white",
-                  color: MainColor,
-                  "&:hover": {
-                    background: MainColor,
-                    color: "white",
-                  },
-                }}
-              >
-                ვრცლად...
-              </ChooseButton>
+              <Link to={`/less/${item[0].id}`}>
+                <ChooseButton
+                  sx={{
+                    padding: "0 10px",
+                    fontSize: "13px",
+                    borderRadius: "20px",
+                    background: "white",
+                    color: MainColor,
+                    "&:hover": {
+                      background: MainColor,
+                      color: "white",
+                    },
+                  }}
+                >
+                  ვრცლად...
+                </ChooseButton>
+              </Link>
             </Stack>
           </Stack>
         </Grid>

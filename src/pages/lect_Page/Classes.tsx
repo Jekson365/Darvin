@@ -2,6 +2,7 @@ import { Box, CardMedia, Grid, Rating, Stack, Typography } from "@mui/material"
 import { Lecturer } from "../lectors/lectros.base/Lecturer"
 import { ButtonDetailed, MainColor } from "../../styles/Styles";
 import { Lecture } from "../lessons/lessons.base/LessonsBase";
+import { Link } from "react-router-dom";
 
 
 const Classes = ({ room }: { room: Lecturer }) => {
@@ -42,7 +43,9 @@ const Classes = ({ room }: { room: Lecturer }) => {
                           },
                         }}
                       />
-                      <ButtonDetailed sx={{marginTop:"10px"}}>მეტი...</ButtonDetailed>
+                      <Link to={`/less/${each.id}`}>
+                        <ButtonDetailed sx={{ marginTop: "10px" }}>მეტი...</ButtonDetailed>
+                      </Link>
                     </Stack>
                   </Box>
                 </Box>

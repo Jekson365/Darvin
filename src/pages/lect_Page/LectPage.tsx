@@ -1,6 +1,5 @@
 import { Box, CardMedia, Grid, Rating, Stack, Typography } from "@mui/material"
 import { MainColor } from "../../styles/Styles"
-import { ChooseButton } from "../auth/Registration"
 import { useState } from 'react'
 import { Lects, Lecturer } from "../lectors/lectros.base/Lecturer"
 
@@ -93,7 +92,7 @@ const LectPage = () => {
                                     )
                                 })}
                             </Stack>
-                            <ChooseButton sx={{ width: "100%" }}>დაჯავშნა</ChooseButton>
+                            {/* <ChooseButton sx={{ width: "100%" }}>დაჯავშნა</ChooseButton> */}
                         </Stack>
                     </Box>
                 </Grid>

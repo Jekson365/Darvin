@@ -1,4 +1,16 @@
-import { Lecture } from "../../lessons/lessons.base/LessonsBase"
+
+export type Lecture = {
+    title: String;
+    author: String;
+    price: number;
+    description: String;
+    videoAmount: number;
+    img: String;
+    stars: number;
+    id: Number,
+    totalMeet:Number,
+    duration:Number,
+};
 
 export type Lecturer = {
     name: String,
@@ -14,7 +26,7 @@ export type Lecturer = {
     education: string[],
     socialMedia: String[],
     experience: String[],
-    rooms: Lecture[]
+    rooms: Lecture[],
 }
 
 
@@ -32,7 +44,10 @@ export const Lects: Lecturer[] = [
 
         rooms: [
             {
+                totalMeet: 12,
+                duration: 8,
                 author: "გოგა საური",
+                id: 1,
                 title: "მაგარი კურსი",
                 price: 125,
                 description:
@@ -42,7 +57,10 @@ export const Lects: Lecturer[] = [
                 stars: Math.floor(Math.random() * 5),
             },
             {
+                totalMeet: 12,
+                duration: 8,
                 author: "გოგა საური",
+                id: 1,
                 title: "მაგარი კურსი",
                 price: 125,
                 description:
@@ -52,7 +70,10 @@ export const Lects: Lecturer[] = [
                 stars: Math.floor(Math.random() * 5),
             },
             {
+                totalMeet: 12,
+                duration: 8,
                 author: "გოგა საური",
+                id: 1,
                 title: "მაგარი კურსი",
                 price: 125,
                 description:
@@ -61,7 +82,7 @@ export const Lects: Lecturer[] = [
                 img: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                 stars: Math.floor(Math.random() * 5),
             },
-            
+
         ],
 
         descLong: "",
@@ -81,6 +102,9 @@ export const Lects: Lecturer[] = [
         price: 100,
         rooms: [
             {
+                totalMeet: 12,
+                duration: 8,
+                id: 2,
                 author: "გოგა საური",
                 title: "მაგარი კურსი",
                 price: 125,
@@ -91,6 +115,9 @@ export const Lects: Lecturer[] = [
                 stars: Math.floor(Math.random() * 5),
             },
             {
+                totalMeet: 12,
+                duration: 8,
+                id: 2,
                 author: "გოგა საური",
                 title: "მაგარი კურსი",
                 price: 125,
@@ -118,6 +145,9 @@ export const Lects: Lecturer[] = [
         price: 100,
         rooms: [
             {
+                totalMeet: 12,
+                duration: 8,
+                id: 3,
                 author: "გოგა საური",
                 title: "მაგარი კურსი",
                 price: 125,
@@ -145,6 +175,9 @@ export const Lects: Lecturer[] = [
         price: 100,
         rooms: [
             {
+                totalMeet: 12,
+                duration: 8,
+                id: 4,
                 author: "გოგა საური",
                 title: "მაგარი კურსი",
                 price: 125,
@@ -172,6 +205,9 @@ export const Lects: Lecturer[] = [
         price: 100,
         rooms: [
             {
+                totalMeet: 12,
+                duration: 8,
+                id: 5,
                 author: "გოგა საური",
                 title: "მაგარი კურსი",
                 price: 125,

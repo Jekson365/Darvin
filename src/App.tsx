@@ -14,6 +14,7 @@ import { createContext, useState, useEffect } from "react";
 import LectPage from "./pages/lect_Page/LectPage";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import LesPage from "./pages/lessons_page/LesPage";
 
 export const NavContext = createContext({});
 
@@ -47,6 +48,7 @@ function App() {
                 <Route path="/reg" element={<Registration />} />
                 <Route path="/login" element={<Login />} />
                 <Route path='/lect/:id' element={<LectPage />} />
+                <Route path='/less/:id' element={<LesPage/>}/>
               </Routes>
             </Box>
           </Container>
