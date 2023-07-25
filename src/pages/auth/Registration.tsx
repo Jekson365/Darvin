@@ -6,11 +6,11 @@ import { StudentForm } from "./forms/StudentForm";
 
 const Registration = () => {
 
-    const [regType, setRegType] = useState<string>("");
-
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+    const [regType, setRegType] = useState<string>("");
+
 
     return (
         <>

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
 import { Loading } from "../lessons/LessonsComponent"
 import { NavContext } from "../../App"
+import Filter from "../../components/Filter"
+import Search from "../../components/Search"
 
 
 const Lectors = () => {
@@ -23,7 +25,7 @@ const Lectors = () => {
 
   useEffect(() => {
     setSearchItems(Lects.filter((e) => {
-    var conctaed: string = e.name + e.surname
+      var conctaed: string = e.name + e.surname
       return conctaed.toLowerCase().includes(searchRes.toLowerCase())
     }))
   }, [searchRes])
@@ -31,6 +33,10 @@ const Lectors = () => {
 
     return (
       <>
+        <Box mb={4}>
+          <Search />
+        </Box>
+        <Filter />
         <Container>
           <Grid container columns={12} rowSpacing={5} columnSpacing={5}>
             {searchItems.map((each: Lecturer, index: number) => {

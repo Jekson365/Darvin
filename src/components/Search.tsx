@@ -1,10 +1,10 @@
-import { Box, Grid, InputBase, styled } from "@mui/material"
-import { ButtonDetailed, MainColor } from "../styles/Styles";
-import { useContext, useEffect } from "react";
+import { Box, InputBase, styled } from "@mui/material"
+import { MainColor } from "../styles/Styles";
+import { useContext } from "react";
 import { NavContext } from "../App";
 
 const Search = () => {
-    const { setSearchRes, searchRes } = useContext<any>(NavContext)
+    const { setSearchRes } = useContext<any>(NavContext)
     return (
         <>
             <Box
@@ -25,7 +25,7 @@ export const SearchBar = styled(InputBase)({
     width: "100%",
     transition: "1s",
     height: "40px",
-    borderRadius: "5px",
+    borderRadius: "1px",
 })
 
 export default Search

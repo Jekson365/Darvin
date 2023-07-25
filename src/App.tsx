@@ -39,7 +39,6 @@ function App() {
             }}
             maxWidth={false}
           >
-            <Search />
             <Box mt={5}>
               <Routes>
                 <Route path="/" element={<Home />} />

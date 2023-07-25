@@ -1,9 +1,10 @@
 import { Box, Grid, } from "@mui/material";
 import LessonsComponent, { Loading } from "./LessonsComponent";
-import { Lects } from "../lectors/lectros.base/Lecturer";
+import { Lects, Lecturer } from "../lectors/lectros.base/Lecturer";
 import { useState, useEffect, useContext } from "react";
 import { NavContext } from "../../App";
 import { Lecture } from "./lessons.base/LessonsBase";
+import FilterBar from "./FilterBar";
 
 const Lessons = () => {
   const { searchRes } = useContext<any>(NavContext)
@@ -22,31 +23,31 @@ const Lessons = () => {
   }, [])
   useEffect(() => {
     console.log(arr)
-    // setArr([].concat(...arr))
   }, [searchRes])
 
   return (
     <>
-      <Grid container columns={12} rowSpacing={2}>
+      <Grid container columns={12} rowSpacing={3}>
         {!isLoading ? (
           <>
-            {arr.map((each: Lecture[], index: number) => {
-              return (
-                <>
-                  <Grid xs={12} item>
-                    <Box data-aos='fade-right'
-                      data-aos-duration={`${String((index + 1) * 300)}`}
-                    >
-                      <LessonsComponent item={each} />
-                    </Box>
-                  </Grid>
-                </>
-              )
-            })
-            }
+            < Grid item xs={12} md={9} container spacing={3}>
+              {arr.map((each: any) => {
+                return ( 
+                  <>
+                    <Grid item xs={12} md={6} container spacing={2}>
+                      {!isLoading ? <LessonsComponent item={each} /> : <Loading />}
+                    </Grid>
+                  </>
+                )
+              })}
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <FilterBar />
+            </Grid>
           </>
-        ) : <Loading />}
-      </Grid>
+        )
+          : <Loading />}
+      </Grid >
     </>
   );
 };
