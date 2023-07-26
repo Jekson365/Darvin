@@ -7,7 +7,6 @@ import Lectors from "./pages/lectors/Lectors";
 import Sylabus from "./pages/sylabus/Sylabus";
 import Blog from "./pages/blog/Blog";
 import { Box, Container } from "@mui/material";
-import Search from "./components/Search";
 import Registration from "./pages/auth/Registration";
 import Login from "./pages/auth/Login";
 import { createContext, useState, useEffect } from "react";
@@ -15,6 +14,7 @@ import LectPage from "./pages/lect_Page/LectPage";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import LesPage from "./pages/lessons_page/LesPage";
+import Notif from "./components/Notif";
 
 export const NavContext = createContext({});
 
@@ -31,6 +31,7 @@ function App() {
       <BrowserRouter>
         <NavContext.Provider value={{ nav, setNav, searchRes, setSearchRes }}>
           <Navigation />
+          <Notif/>
           <Container
             sx={{
               marginLeft: { xs: "0", md: "380px" },

@@ -1,9 +1,8 @@
-import { Box, Grid, } from "@mui/material";
+import {Grid, } from "@mui/material";
 import LessonsComponent, { Loading } from "./LessonsComponent";
-import { Lects, Lecturer } from "../lectors/lectros.base/Lecturer";
+import { Lects } from "../lectors/lectros.base/Lecturer";
 import { useState, useEffect, useContext } from "react";
 import { NavContext } from "../../App";
-import { Lecture } from "./lessons.base/LessonsBase";
 import FilterBar from "./FilterBar";
 
 const Lessons = () => {
@@ -27,14 +26,16 @@ const Lessons = () => {
 
   return (
     <>
-      <Grid container columns={12} rowSpacing={3}>
+      <Grid container columns={12} rowSpacing={3}
+        sx={{flexDirection:{xs:"column-reverse",sm:"row"}}}
+      >
         {!isLoading ? (
           <>
             < Grid item xs={12} md={9} container spacing={3}>
               {arr.map((each: any) => {
                 return ( 
                   <>
-                    <Grid item xs={12} md={6} container spacing={2}>
+                    <Grid item xs={12} sm={6} container spacing={2}>
                       {!isLoading ? <LessonsComponent item={each} /> : <Loading />}
                     </Grid>
                   </>

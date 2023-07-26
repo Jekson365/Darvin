@@ -1,15 +1,17 @@
-import { Grid, MenuItem, CardMedia, Autocomplete, TextField, Typography } from '@mui/material'
+import { Grid, MenuItem, CardMedia, Typography } from '@mui/material'
 import { CustomField, CustomInput, CustomSelect, MainColor } from '../../../styles/Styles'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ChooseButton } from '../Registration'
 
 export const StudentForm = () => {
     const [status, setStatus] = useState<string>("")
     const [age, setAge] = useState<number>(0)
-    const [subjects, setSubjects] = useState<string[]>(['მათემატიკა', 'პროგრამირება', "ქართული", "ინგლისური", "ესპანური", "გერმანული", "იტალიუერი", "იაპონური", "ჩინური", "ისტორია"])
+    // const [subjects, setSubjects] = useState<string[]>(['მათემატიკა', 'პროგრამირება', "ქართული", "ინგლისური", "ესპანური", "გერმანული", "იტალიუერი", "იაპონური", "ჩინური", "ისტორია"])
 
 
-
+    useEffect(()=> {
+        console.log(age)
+    },[])
 
 
 

@@ -18,7 +18,7 @@ const Sylabus = ({ SylByWeek }: { SylByWeek: any }) => {
                     display={'flex'}
                     flexWrap={'wrap'}
                 >
-                    {SylByWeek && SylByWeek.week.map((each: any, index: number) => {
+                    {SylByWeek && SylByWeek.week.map((_each: any, index: number) => {
                         return (
                             <>
                                 <Grid item
@@ -32,7 +32,7 @@ const Sylabus = ({ SylByWeek }: { SylByWeek: any }) => {
                                         bgcolor={MainColor}
                                         height={'230px'}
                                         // width={'230px'}
-                                        sx={{"&:hover":{transform:"scale(1.1)"},cursor:"pointer"}}
+                                        sx={{ "&:hover": { transform: "scale(1.1)" }, cursor: "pointer" }}
                                         borderRadius={"5px"}
                                         p={[2, 2]}
 

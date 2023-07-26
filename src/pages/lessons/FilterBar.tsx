@@ -1,4 +1,4 @@
-import { Box, FormControl, FormControlLabel, FormLabel, Grid, Radio, RadioGroup, Rating, Slider, Stack, Typography, radioClasses } from "@mui/material"
+import { Box, Grid, Radio, RadioGroup, Rating, Slider, Stack, Typography } from "@mui/material"
 import { makeStyles } from "@mui/styles"
 import Search from "../../components/Search"
 import { MainColor } from "../../styles/Styles"
@@ -45,7 +45,7 @@ const FilterBar = () => {
         if (!Array.isArray(newValue)) {
             return;
         }
-
+        console.log(event)
         if (activeThumb === 0) {
             setValue1([Math.min(newValue[0], value1[1]), value1[1]]);
         } else {
@@ -64,17 +64,12 @@ const FilterBar = () => {
     }, [star])
 
 
-    const radioStyles = makeStyles({
-        root: {
-            background: `${MainColor} !important`
-        }
-    })
 
     const classes = useStyles();
     // const radioClass = radioStyles();
     return (
         <>
-            <Box pl={2} sx={{ position: { xs: "static", md: "sticky", top: "20px" } }}>
+            <Box sx={{ position: { xs: "static", md: "sticky", top: "20px" },paddingLeft:{xs:"0px",md:"10px"}}} >
                 <Grid container columns={12}>
                     <Stack gap={'30px'}>
 
@@ -92,6 +87,7 @@ const FilterBar = () => {
                                             p={1}
                                             pl={1.5}
                                             pr={1.5}
+                                            
                                             fontSize={'11px'}
                                             color={'white'}
                                             borderRadius={"20px"}

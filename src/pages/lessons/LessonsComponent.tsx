@@ -1,9 +1,8 @@
-import { Box, Card, CardMedia, CircularProgress, Grid, Rating, Stack, Typography } from "@mui/material";
+import { Box, CircularProgress, Stack, Typography } from "@mui/material";
 import { ButtonDetailed, MainColor } from "../../styles/Styles";
-import { ChooseButton } from "../auth/Registration";
 import { Lecture } from "./lessons.base/LessonsBase";
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const LessonsComponent = ({ item }: { item: Lecture[] }) => {
   useEffect(() => {
@@ -13,8 +12,40 @@ const LessonsComponent = ({ item }: { item: Lecture[] }) => {
     return (
       <>
         <Box
-          sx={{width:"100%",minHeight:"200px",background:"red"}}
-        ></Box>
+          sx={{ width: "100%", minHeight: "400px", background: "white", border: "0.3px solid rgba(0,0,0,0.2)", borderRadius: "5px", overflow: "hidden" }}
+        >
+          <Box
+            height={"50%"}
+            width={"100%"}
+            bgcolor={"blue"}
+            sx={{ backgroundImage: `url('${item && item[0].img}')`, backgroundSize: "cover" }}
+          ></Box>
+          <Stack
+            p={1}
+            gap={'10px'}
+            direction={'column'}
+            alignItems={'flex-start'}
+          >
+
+            <Typography
+              variant="h6"
+              fontWeight={'bold'}
+              color={MainColor}
+            >{item[0].title}</Typography>
+
+            <Typography
+              color={'gray'}
+              fontSize={'13px'}
+            >{item[0].description}</Typography>
+            <Link
+              to={`/less/${item && item[0].id}`}
+            >
+              <ButtonDetailed
+                sx={{ fontSize: "11px" }}
+              >ვრცლად...</ButtonDetailed>
+            </Link>
+          </Stack>
+        </Box>
       </>
     );
   }

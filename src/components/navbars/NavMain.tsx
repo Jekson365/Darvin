@@ -3,11 +3,11 @@ import LOGO from "../../Logo.png";
 import { NavLink } from "react-router-dom";
 import IconReg from "../../icons/reg.svg";
 import IconAut from "../../icons/auth.svg";
-import { useContext } from "react";
-import { NavContext } from "../../App";
+// import { useContext } from "react";
+// import { NavContext } from "../../App";
 
 const NavMain = () => {
-  const setNav = useContext(NavContext);
+  // const setNav = useContext(NavContext);
   return (
     <>
       <Container

@@ -1,7 +1,7 @@
 import { Grid, MenuItem, CardMedia, TextField, Typography } from "@mui/material"
 import { CustomInput, CustomSelect, CustomField, CustomComplete, MainColor } from "../../../styles/Styles"
 import { ChooseButton } from "../Registration"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const LectForm = () => {
     const [status, setStatus] = useState<string>("აბიტურიენტი")
@@ -9,6 +9,10 @@ const LectForm = () => {
     const [subjects, setSubjects] = useState<string[]>(['მათემატიკა', 'თარჯიმანი', 'პროგრამირება', "ქართული", "ინგლისური", "ესპანური", "გერმანული", "იტალიუერი", "იაპონური", "ჩინური", "ისტორია"])
     const [education, setEducation] = useState<string>("ბაკალავრი")
 
+    useEffect(()=> {
+        console.log(age);
+        console.log(setSubjects);
+    },[])
 
     // handle status select field
     const handleStatusField = (event: any) => {

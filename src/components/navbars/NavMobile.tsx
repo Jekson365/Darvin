@@ -1,14 +1,14 @@
 import { Box, Container, Stack } from "@mui/material";
 import { NavItemText } from "./NavMain";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import IconReg from "../../icons/reg.svg";
 import IconAut from "../../icons/auth.svg";
 import LOGO from "../../Logo.png";
 import { NavContext } from "../../App";
 
 const NavMobile = () => {
-  const { nav, setNav } = useContext(NavContext);
+  const { nav, setNav } = useContext<any>(NavContext);
   return (
     <>
       <Container maxWidth={false} sx={{ padding: "0px !important" }}>
